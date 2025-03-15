@@ -208,5 +208,15 @@ class TestSplitNodesDelimiter(unittest.TestCase):
             nodes,
         )
 
+    def test_extract_title(self):
+        md = """
+# this is an h1
+
+this is paragraph text
+
+## this is an h2
+"""
+        self.assertEqual("this is an h1", extract_title(md))
+
 if __name__ == "__main__":
     unittest.main()
